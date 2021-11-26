@@ -15,7 +15,7 @@ router.use(express.urlencoded({
 router.route("/search")
     .get((req, resp)=>{
         const {name} = req.query;
-        mgdb.model("User").find({"name":{""}}, (err, users))
+        mgdb.model("User").find({"name":{"freddy"}}, (err, users))
         if(err) throw err;
         resp.json(users)
     })
