@@ -15,11 +15,11 @@ router.use(express.urlencoded({
 router.route("/search")
     .get((req, resp)=>{
         const {name} = req.query;
-        mgdb.model("User").find({"name":{"freddy"}}, (err, users))
+        mgdb.model("Users").find({"name.firts":name}, (err, users)=>{
         if(err) throw err;
         resp.json(users)
+        })
     })
-
 router.route("/user")
     .get(function(req, resp){
         mgdb.model("Users").find({}, (err, users)=>{
@@ -28,7 +28,7 @@ router.route("/user")
         })
     })
     .post((req, resp)=>{
-        // console.log(req.body);
+        // console.log("este es el body: ",req.body);
         mgdb.model("Users").create(
         req.body,
         (err, user)=>{
