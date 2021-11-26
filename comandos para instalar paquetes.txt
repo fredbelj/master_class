@@ -1,0 +1,7 @@
+##############COMANDOS PARA INSTARL PAQUETES PARA BAKCEND############
+npm - y init
+npm i -y express
+npm i -y mongoose
+
+#########COMANDOS PARA INSTALAR PAQUETES PARA FRONTEND################
+npx create-react-app frontend  //frontend es el nombre que se da a la carpeta//
