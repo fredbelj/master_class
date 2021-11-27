@@ -1,6 +1,5 @@
 const   mgdb = require("mongoose");
-const userSchema = new mgdb.Schema(
-    {
+const productSchema = new mgdb.Schema({
         full_name:{
             type:String,
             required:true,
@@ -22,6 +21,5 @@ const userSchema = new mgdb.Schema(
             required:true,
             unique:true,
         },
-    }
-);
-mgdb.model("Products",userSchema);
+});
+mgdb.model("Products",productSchema);

@@ -12,7 +12,7 @@ router.use(express.urlencoded({
     limit: '20mb'
 }));
 
-router.route("/search")
+router.route("/search") /* recurso search - end point*/
     .get((req, resp)=>{
         const {name} = req.query;
         mgdb.model("Users").find({"name.firts":name}, (err, users)=>{
@@ -20,7 +20,7 @@ router.route("/search")
         resp.json(users)
         })
     })
-router.route("/user")
+router.route("/user") /* Recuros user - end point-*/
     .get(function(req, resp){
         mgdb.model("Users").find({}, (err, users)=>{
             if(err) throw err;
@@ -43,11 +43,11 @@ router.route("/user")
     })
 
 
-router.route("/:id")
+router.route("/:id") /* recurso id */
     .get((req, resp)=>{
         mgdb.model("Users").findById(req.params.id,(error, user)=>{
             if(error){
-                console.log("There was a problem", error);
+                console.log("There was a problem 400");
             }else{
                 console.log("Retrieving id ", req.params.id);
                 console.log(user);
