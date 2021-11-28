@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 
-const userRoutes = require("./routes/users");
-const productRoutes = require("./routes/products");
+const userRoutes = require("./users");
+const productRoutes = require("./products");
 const { response } = require("express");
 
 app.use("/users", userRoutes); //end point
