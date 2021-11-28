@@ -2,8 +2,11 @@
 npm - y init
 npm i -y express
 npm i -y mongoose
-npi i commitizen // para realizar adecuados commit en get_digit
-npi i dotenv //para poder leer el archivo .env que contiene los parametro de entorno de conexion a la BD
+npm i commitizen // para realizar adecuados commit en get_digit
+npm i dotenv //para poder leer el archivo .env que contiene los parametro de entorno de conexion a la BD
+npm i swagger-jsdoc
+npm i swagger-ui-express
+
 
 #########COMANDOS PARA INSTALAR PAQUETES PARA FRONTEND################
 npx create-react-app frontend  //frontend es el nombre que se da a la carpeta//
