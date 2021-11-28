@@ -1,0 +1,29 @@
+{
+    "definition":{
+        "swagger":"2.0",
+        "info":{
+            "version":"1.0.0",
+            "tittle":"Yet Anothe Node.js is Contactame!!!",
+            "licence":{
+                "name":"MIT",
+                "url":"https://opensoulce.org/license/MIT"
+            },
+            "contact":{
+                "name":"Freddy Belmonte",
+                "url":"http://github.com/fredbelj"
+            }
+        },
+        "host":"localhost:5000",
+        "basePath":"/",
+        "schemes":[
+            "http"
+        ],
+        "consumes":[
+            "aplication/json"
+        ],
+        "produces":[
+            "aplication/json"
+        ]
+    },
+    "apis":["/.routers/*.js"]
+}
