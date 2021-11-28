@@ -6,7 +6,7 @@
             "tittle":"Yet Anothe Node.js is Contactame!!!",
             "licence":{
                 "name":"MIT",
-                "url":"https://opensoulce.org/license/MIT"
+                "url":"https://opensource.org/license/MIT"
             },
             "contact":{
                 "name":"Freddy Belmonte",
@@ -25,5 +25,5 @@
             "aplication/json"
         ]
     },
-    "apis":["/.routers/*.js"]
+    "apis":["./router/*.js"]
 }

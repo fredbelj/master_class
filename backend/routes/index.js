@@ -14,11 +14,13 @@ const { response } = require("express");
 app.use("/users", userRoutes); //end point
 app.use("/products", productRoutes); //end point
 
-app.get("/", (req, resp)=>{
+/* MENSAJE /pong) DE PRUEBA */
+app.get("/ping", (req, resp)=>{
     resp.json({
         "greet": "Hola aplicación corriendo!!!",
         "menssage":"pong"
-    });   
-});
+    })
+});   
+app.get("/", swaggerUI.serve, swaggerUI.setup(specs)) /* se entrega parametos confi en swagger.js al ser llamada la raiz / */
 
 module.exports = app;

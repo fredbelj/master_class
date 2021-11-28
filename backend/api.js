@@ -6,5 +6,5 @@ const url = process.env.DB_HOST;
 const server = app.listen(port, ()=>{
     let host = server.address().address;
     // let port = server.address().port; /* la variable port se toma de la linea 4 */
-    if(process.env.NODE_ENV !== "production") console.log("Server listening at http://",url,host,port);
+    if(process.env.NODE_ENV !== "production") console.log("Mensaje desde api.js: Server listening at http://",url,host,port);
 });
