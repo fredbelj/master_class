@@ -6,6 +6,9 @@ npm i commitizen // para realizar adecuados commit en get_digit
 npm i dotenv //para poder leer el archivo .env que contiene los parametro de entorno de conexion a la BD
 npm i swagger-jsdoc
 npm i swagger-ui-express
+npm i cros
+npm i mocha supertest chai // herramientas para crear ambiente de pruebas
+
 
 
 #########COMANDOS PARA INSTALAR PAQUETES PARA FRONTEND################
