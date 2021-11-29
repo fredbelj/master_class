@@ -25,5 +25,5 @@
             "aplication/json"
         ]
     },
-    "apis":["./router/*.js"]
+    "apis":["./routes/*.js"]
 }
