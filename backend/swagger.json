@@ -3,7 +3,7 @@
         "swagger":"2.0",
         "info":{
             "version":"1.0.0",
-            "tittle":"Yet Anothe Node.js is Contactame!!!",
+            "title":"Yet Another Node.js common APP is Contactame!!!",
             "licence":{
                 "name":"MIT",
                 "url":"https://opensource.org/license/MIT"
@@ -16,7 +16,8 @@
         "host":"localhost:5000",
         "basePath":"/",
         "schemes":[
-            "http"
+            "http",
+            "https"
         ],
         "consumes":[
             "aplication/json"
