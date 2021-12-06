@@ -5,8 +5,8 @@ npm i -y mongoose
 npm i commitizen // para realizar adecuados commit en get_digit
 npm i dotenv //para poder leer el archivo .env que contiene los parametro de entorno de conexion a la BD
 npm i swagger-jsdoc
-npm i swagger-ui-express
-npm i cros
+npm i swagger-ui-express  //utilizado para crear una pagina wep indicado la forma de utilizar las apis creadas en el backend
+npm i cors //s un mecanismo para permitir o restringir los recursos solicitados en un servidor web dependiendo de dónde se inició la solicitud HTTP.
 npm i mocha supertest chai // herramientas para crear ambiente de pruebas
 
 
