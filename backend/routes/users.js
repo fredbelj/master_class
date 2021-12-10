@@ -13,6 +13,15 @@ router.use(express.urlencoded({
 }));
 
 router.route("/search") /* recurso search - end point*/
+    /**
+     * @swagger
+     * /users/search:
+     *  get:
+     *   description: response the pong message
+     *  responses:
+     *   200:
+     *    description: {"message","pong"}
+     */
     .get((req, resp)=>{
         const {name} = req.query;
         mgdb.model("Users").find({"name.firts":name}, (err, users)=>{
@@ -20,13 +29,47 @@ router.route("/search") /* recurso search - end point*/
         resp.json(users)
         })
     })
-router.route("/user") /* Recuros user - end point-*/
+router.route("/") /* Recuros user - end point-*/
+    /**
+     * @swagger
+     * /users:
+     *  get:
+     *      summary: Returns a list of users.
+     *      description: Contactame send first 100 users in DB as arrayt the objects.
+     *  responses:
+     *      200:
+     *          description: A User object.
+     *          schema:
+     *              type: object
+     *              properties:
+     *                  id:
+     *                      type: ObjectId
+     *                      example: 619fc8ca9b4b0c1468536c23
+     *      400:
+     *          description: The specified user ID is invalid (e.g. not a number).
+     *      404:
+     *          description: A user with the specified ID was not found.
+     *      default:
+     *          description: Unexpected error
+     */
     .get(function(req, resp){
-        mgdb.model("Users").find({}, (err, users)=>{
+        mgdb.model("Users")
+        .find({})
+        .limit(100)
+        .exec((err, users)=>{
             if(err) throw err;
             resp.json(users)
         })
     })
+        /**
+     * @swagger
+     * /users:
+     *  post:
+     *   description: response the pong message
+     *  responses:
+     *   200:
+     *    description: {"message","pong"}
+     */
     .post((req, resp)=>{
         // console.log("este es el body: ",req.body);
         mgdb.model("Users").create(
@@ -44,6 +87,35 @@ router.route("/user") /* Recuros user - end point-*/
 
 
 router.route("/:id") /* recurso id */
+    /** 
+     * @swagger
+     * paths:
+     *  /users/{id}:
+     *  get:
+     *      summary: Returns a user by ID.
+     *    parameters:
+     *      - in: path
+     *      name: id
+     *      required: true
+     *      type: ObjectId
+     *      minimum: 1
+     *      description: The ID of the user to return.
+     *    responses:
+     *       200:
+     *          description: A User object.
+     *          schema:
+     *              type: object
+     *              properties:
+     *              id:
+     *                  type: ObjectId
+     *                  example: 619fc8ca9b4b0c1468536c23
+     *       400:
+     *          description: The specified user ID is invalid (e.g. not a number).
+     *       404:
+     *          description: A user with the specified ID was not found.
+     *       default:
+     *          description: Unexpected error
+    */
     .get((req, resp)=>{
         mgdb.model("Users").findById(req.params.id,(error, user)=>{
             if(error){
@@ -55,6 +127,15 @@ router.route("/:id") /* recurso id */
             }
         })
     })
+        /**
+     * @swagger
+     * /users/id:
+     *  put:
+     *   description: response the pong message
+     *  responses:
+     *   200:
+     *    description: {"message","pong"}
+     */
     .put((req, resp)=>{
         mgdb.model("Users").findById(req.params.id,(error, user)=>{
             if(error){
@@ -74,6 +155,15 @@ router.route("/:id") /* recurso id */
             }
         })
     })
+        /**
+     * @swagger
+     * /users/id:
+     *  delete:
+     *   description: response the pong message
+     *  responses:
+     *   200:
+     *    description: {"message","pong"}
+     */
     .delete((req, resp)=>{
         mgdb.model("Users").findById(req.params.id,(error, user)=>{
             if(error){

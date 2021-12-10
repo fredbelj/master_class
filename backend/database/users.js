@@ -42,6 +42,10 @@ const userSchema = new mgdb.Schema({
 
 /* funcion para validar si el modelo ya fue compilado en ambiente de test no lo tenga en cuenta, de lo contrario crea el modelo (Users) */
 /* Se usa esta funcion para crea el schema y no afecte cuando se ejecute el ambiente de prueba (nmp.test) */
+/**
+ * Check if model has been compiled.
+ * @param {string} modelName 
+ */
 const checkModel = (modelName)=>{
     mgdb.modelNames().indexOf(modelName) == -1
     ?mgdb.model(modelName, userSchema)
